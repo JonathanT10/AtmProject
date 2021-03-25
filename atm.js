@@ -22,8 +22,11 @@ function withdraw(money){
 }
 
 
-function deposite(money, cashIn){
-    let input = prompt("How much would you like to deposite?")
+function deposite(money){
+    let userInput = prompt("How much would you like to deposite?");
+
+    money = money + userInput;
+    console.log("Your new balance is: $" + money);
 
 }
 
@@ -38,7 +41,7 @@ function validatePin(identification){
        }
    }
 }
-module.exports.identification = identification;
+module.exports.accountInfo = identification;
 module.exports.balance = getBalance;
 module.exports.withdraw = withdraw;
 module.exports.deposite = deposite;
