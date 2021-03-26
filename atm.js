@@ -28,9 +28,11 @@ function withdraw(money){
 function deposite(money){
     let userInput = prompt("How much would you like to deposite?","0");
     let moneyInput = parseInt(userInput);
-    while(moneyInput <= 0){
-        userInput = prompt("How much would you like to deposite?","0");
+    let number = isNumber(moneyInput);
+    while(moneyInput <= 0 || number === false){
+        userInput = prompt("We did not recognize that amount. Please try again. \n How much would you like to deposite?","0");
         moneyInput = parseInt(userInput);
+        number = isNumber(moneyInput);
     }
     money = (money) + (moneyInput);
     console.log("Your new balance is: $" + money);
