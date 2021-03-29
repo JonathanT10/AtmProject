@@ -4,8 +4,7 @@ const identification = require("./account")
 const isNumber = require("is-number");
 let prompt = require("prompt-sync")();
 
-console.log(money);
-console.log(identification);
+//console.log(identification);
 
 function getBalance(money){
     console.log("Your balance is: $" + money);

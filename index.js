@@ -11,6 +11,7 @@ let prompt = require("prompt-sync")();
 const { accountInfo, balance, withdraw, deposite, validate } = atm;
 const {money, identification} = accountInfo;
 let exit = require("exit");
+const { monitorEventLoopDelay } = require("node:perf_hooks");
 // console.log(identification);
 //console.log(money);
 
@@ -20,7 +21,7 @@ let exit = require("exit");
 // let verification = pin(identification);
 //console.log(verification);
 
-console.log("Welcom to the ATM!");
+console.log("Welcom to the ATM!")
 validate(identification);
 userMenu(money);
 
@@ -31,10 +32,11 @@ function userMenu(money){
 //   money = withdraw(money);
 //   money = deposite(money);
 
-}
+}return money;
+
 
 function userSelection(money){
-    let menuOptions = prompt("Please enter the number of your selection: \n1. Balance \n2. Withdraw \n3. Deposite \n4. Exit\n");
+    let menuOptions = prompt("Please enter the number of your selection: \n1. Balance \n2. Withdraw \n3. Deposite \n4. Exit    ");
 
     do{
         switch(menuOptions){
@@ -58,9 +60,14 @@ function userSelection(money){
             break;
         }
     }while(menuOptions != "1" || menuOptions != "2" || menuOptions != "3" || menuOptions != "4");
-}
+    return money;
+} return money;
+
+
+
+
    
 
-
+module.exports.money = availableCash;
 
 
